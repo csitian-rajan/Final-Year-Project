@@ -1,0 +1,94 @@
+.grid{
+    display: grid;
+    
+   
+  
+}
+.grid-three--cols {
+  grid-template-columns: repeat(3, 1fr);
+
+ 
+ 
+}
+.enroll-students{
+    height: 10rem;
+    width: auto;
+   
+
+}
+.section-heading {
+  font-size: 4.5rem;
+  font-weight: bold;
+  text-transform: capitalize;
+  padding: 1rem 0;
+}
+.section-sub--heading{
+    font-size: 2rem;
+    font-weight: bold;
+    color: black;
+}
+p{
+     font-size: 2rem;
+        color: #e5e5e5;
+       padding-bottom: 2rem;
+}
+
+
+.card-about{
+
+    text-align: center;
+    height: 20rem;
+    width: 30rem;
+    margin: 5rem 2rem;
+    padding: 2rem 1.5rem;
+    background-color: #ffffff;
+   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+   border-radius: 10px;
+   &:hover{
+      scale: 1.1;
+      transition: 0.5s;
+   }
+   & p{
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    color: #050505;
+   }
+  }
+
+
+  /* end enroll card */
+
+  /* dashcard */
+
+  .dash-card-students{
+    margin-top: 3rem;
+  
+   & .grid{
+    gap: 2rem;
+ 
+  
+   }
+  & .dash-card {
+             display: flex;
+             align-items: center;
+             justify-content:space-around;
+             gap: 1rem;
+             width: 29.3rem;
+             height: 10rem;
+             border-radius: 10px;
+    }
+    & .dash-card-subheading{
+        font-size: 2rem;
+    }
+    & .dash-section-heading{
+        color: #ffffff;
+        font-size: 2rem;
+        margin-top: -10px;
+    }
+  }
+  .dash-topic{
+    margin-left: 50px;
+  }
+  /* dash- card */
+
+  /* end -dashcard */

@@ -1,0 +1,31 @@
+[
+    {
+        "id":1,
+        "heading":"Overall Accuracy",
+         "icon":"CiCircleCheck",
+         "gradient":"linear-gradient(90deg,rgba(47, 126, 237, 1) 0%, rgba(17, 111, 242, 1) 60%)",
+         "number":"86%"
+    },
+    {
+        "id":2,
+        "heading":"Topics Mastered",
+         "icon":"FaGraduationCap",
+         "gradient": "linear-gradient(90deg,rgba(62, 189, 96, 1) 0%, rgba(16, 179, 59, 1) 60%)",
+         "number":12
+    },
+      {
+        "id":3,
+        "heading":"Quizzes ",
+         "icon":"IoBookOutline",
+         "gradient": "linear-gradient(90deg,rgba(171, 63, 204, 1) 35%, rgba(169, 37, 184, 1) 56%)",
+         "number":47
+    },
+     {
+        "id":4,
+        "heading":"Study Time ",
+         "icon":"IoIosTimer",
+         "gradient": " linear-gradient(90deg,rgba(230, 142, 76, 1) 23%, rgba(247, 107, 0, 1) 60%)",
+         "number":"10H"
+     }
+   
+]

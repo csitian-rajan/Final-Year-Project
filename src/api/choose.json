@@ -1,0 +1,26 @@
+[
+    {
+       "id":1,
+       "name":"Smart Content Generation",
+       "information":"Generate quizzes from any text or select from curated topics for LokSewa, IOE, and CSIT exams.",
+       "icon":"FaBookOpen",
+       "color":"blue"
+       
+    },
+    {
+       
+       "id":2,
+       "name":"Performance Analytics",
+       "information":"Detailed insights into your strengths, weaknesses, and personalized study recommendations.", 
+       "icon":"GiProgression",
+       "color":"violete"
+    },
+    {
+       
+       "id":3,
+       "name":"Competitive Exam Ready",
+       "information":"Specifically designed for LokSewa, IOE, CSIT and other competitive examinations in Nepal.",
+       "icon":"PiPersonSimpleRunBold",
+       "color":"orange"
+    }
+]
