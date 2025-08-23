@@ -1,3 +1,4 @@
+@import "tailwindcss";
 * {
   margin: 0;
   padding: 0;
@@ -286,11 +287,22 @@ media query */
   background: #fff;
   padding: 2rem;
   border-radius: 12px;
-  width: 800px;
+ 
+  width: 700px;
   height: 600px;
-  
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   animation: fadeIn 0.3s ease-in-out;
+  & .generate-quiz{
+     margin-top: 10px;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+  }
+  & h3{
+   margin: 10px;
+   font-weight: bold;
+
+  }
 }
 
 .popup-content button {
@@ -322,6 +334,7 @@ media query */
 /* <!--end-Dashbord popup--section--> */
 
 /* star footer section */
+
 footer {
   background-color: rgb(5, 16, 38);
   border: 1px solid;

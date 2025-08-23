@@ -1,0 +1,17 @@
+[
+    {
+      "id":"1",
+        "heading":"Select Subject",
+         "icon":"IoBookOutline",
+         "color":"blue",
+         "paragraph":"choose from curated exam topics"
+
+
+    },
+      {"id":2,
+        "heading":"Paste Text",
+         "icon":"FaGraduationCap",
+         "color":"purple",
+         "paragraph":"Generate From your own content"
+}
+]

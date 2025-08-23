@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { DashTopic } from "../components/DashTopic";
 import { SelectTopic } from "./SelectTopic";
+import { DashCard } from "../components/DashCard";
 
 export const DashBord = () => {
   const name = "Rajan";
@@ -9,7 +10,7 @@ export const DashBord = () => {
 
   // when topic is clicked
   const handleTopicSelect = (id, topicName) => {
-    console.log("id:",id, "name:",topicName)
+    console.log("id:",id, "name:",topicName);
     setSelectedTopic({ id, name: topicName });
   };
 
@@ -25,6 +26,7 @@ export const DashBord = () => {
         <p className="section-common-subheading">
           Ready to continue your learning journey?
         </p>
+        <DashCard />
 
         <div className="section-topic">
           <DashTopic onTopicSelect={handleTopicSelect} />
