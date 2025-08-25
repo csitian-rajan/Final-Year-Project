@@ -12,6 +12,7 @@ export const DashBord = () => {
   const handleTopicSelect = (id, topicName) => {
     console.log("id:",id, "name:",topicName);
     setSelectedTopic({ id, name: topicName });
+
   };
 
   // close popup
@@ -29,7 +30,7 @@ export const DashBord = () => {
         <DashCard />
 
         <div className="section-topic">
-          <DashTopic onTopicSelect={handleTopicSelect} />
+          <DashTopic onTopicSelect={handleTopicSelect}  />
         </div>
 
         {/* ✅ Popup modal */}

@@ -210,3 +210,62 @@ p{
   background: #1d4ed8;
 } 
 /* pop up end select subject */
+
+/* section -generated quizz */
+.section-Generatedquiz{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  & .section-about{
+    margin-top: 0px;
+  } 
+  &.progressbar{
+    margin-left: 100px;
+  }
+  & .timer-back{
+    margin: 50px 0;
+    width: 100rem;
+    text-align: right;
+    display: flex;
+    justify-content: space-between;
+    align-items: spa;
+   
+  }
+  & .section-heading{
+    font-size: 4rem;
+    color: red;
+  }
+  & .quenstion-options{
+    width: 100rem;
+    padding:20px;
+   
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  & .options{
+    width: 80%;
+  
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 10px;
+    & .btn{
+         background-color: white;
+   box-shadow: rgba(0, 0, 0, 0.20) 0px 1px 4px;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+ 
+    }
+    & .btn:hover{
+      background-color: #1d4ed8;
+      color: white;
+    }
+  }
+}
+/* section end  -generated quizz */

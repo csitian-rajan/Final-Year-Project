@@ -1,20 +1,58 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-export const SelectChapter = ({ subject, onClose }) => {
+export const SelectChapter = ({ subject, examType,onClose }) => {
+ console.log("Subject:", subject, "Exam Type:", examType);
   const navigate = useNavigate();
 
-  const syllabus = {
-    Math: ["Algebra", "Geometry", "Calculus"],
-    Physics: ["Mechanics", "Optics", "Electromagnetism"],
-    Chemistry: ["Organic", "Inorganic", "Physical"],
-    English: ["Grammar", "Comprehension", "Literature"],
+   // ✅ Divided syllabus into groups
+   const syllabus = {
+    IOE: {
+      Math: ["Algebra", "Geometry", "Calculus", "Trigonometry", "Probability"],
+      Physics: ["Mechanics", "Optics", "Electromagnetism", "Thermodynamics"],
+      Chemistry: ["Organic", "Inorganic", "Physical", "Biochemistry"],
+      English: ["Grammar", "Comprehension", "Literature", "Vocabulary"],
+    },
+
+    LokSewa: {
+      "Computer Operator": [
+        "Computer Fundamentals",
+        "Operating System",
+        "MS Word",
+        "MS Excel",
+        "MS PowerPoint",
+        "MS Access / SQL Basics",
+        "Computer Networks",
+        "Internet & Email",
+        "Programming Fundamentals",
+        "IT Policy & Cyber Security",
+        "Office Management & Typing",
+      ],
+    },
+
+    GeneralKnowledge: {
+      "General Knowledge": [
+        "Nepal History",
+        "World History",
+        "Geography of Nepal",
+        "World Geography",
+        "Basic Science",
+        "Current Affairs",
+        "Nepal Politics",
+      ],
+    },
   };
 
   const [selectedChapter, setSelectedChapter] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
+  
+  
+    let chapterList = [];
+  if (syllabus[examType]?.[subject]) {
+    chapterList = syllabus[examType][subject];
+  }
   const handleGenerate = async () => {
     if (!selectedChapter) {
       alert("Please select a chapter first");
@@ -39,10 +77,24 @@ export const SelectChapter = ({ subject, onClose }) => {
         return;
       }
 
-      console.log("Quiz generated:", data);
+      console.log("Quiz generated backend:", data);
+      
+      // After fetching data from backend
+       
+      if(!data.success || !Array.isArray(data.quiz) || data.quiz.length === 0){
+        alert("failed to quiz generate");
+    
+    return;
+      }
 
+      console.log("Quiz data before navigation:", data.quiz);
+
+      // navigation to generate code
+        navigate("/generated-quiz", {
+        state: { subject, chapter:selectedChapter, quiz: data.quiz },
+});
       // Navigate to quiz page with data
-      navigate("/quiz", { state: { subject, chapter: selectedChapter, quiz: data.quiz } });
+      // navigate("/quiz", { state: { subject, chapter: selectedChapter, quiz: data.quiz } });
     } catch (err) {
       console.error("Fetch error:", err);
       setError("❌ Failed to fetch quiz from backend.");
@@ -50,6 +102,8 @@ export const SelectChapter = ({ subject, onClose }) => {
       setLoading(false);
     }
   };
+   // ✅ Find correct chapter list
+
 
   return (
     <div className="container">
@@ -60,7 +114,7 @@ export const SelectChapter = ({ subject, onClose }) => {
             <h3>{subject}</h3>
 
             <ul>
-              {syllabus[subject]?.map((chapter) => (
+              {chapterList?.map((chapter) => (
                 <li key={chapter} className="cursor-pointer text-green-600">
                   <input
                     type="radio"

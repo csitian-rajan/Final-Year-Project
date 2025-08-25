@@ -26,11 +26,34 @@ app.post("/api/generate-quiz", async (req, res) => {
 
     const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
-    const prompt = `you are a quiz master.generate 10 random question for ${subject}, specifically from ${chapter} with 4 multiple choise answer.also provid the answer separetely. the resresposnse shoild be in the following json format:[{'id:'0,'question':','options':[],'answer':'},..]}`;
+    const prompt = `You are a quiz master. Generate 10 random multiple-choice questions for ${subject}, specifically from ${chapter}.
+    Each question must have 4 options and 1 correct answer.
+⚠️ IMPORTANT: The output must be ONLY valid JSON array, no Markdown, no explanations, no text outside JSON.
+Example format:
+[
+  {
+    "id": 1,
+    "question": "What is 2+2?",
+    "options": ["A.1", "B.2", "C.3", "D.4"],
+    "answer": "4"
+  }
+]`;
 
     const result = await model.generateContent(prompt);
+    let quizText = result.response.text().trim();
+    //try passing quizz into json
+    let quiz
+    try {
+      quiz= JSON.parse(quizText)
+    }catch(err){
+      console.log("failled to gemei output:",err);
 
-    res.json({ success: true, quiz: result.response.text() });
+      //fallback :return raw text if parsing fails
+      return res.json({success:false,raw:quizText});
+    }
+     res.json({success:true,quiz})
+        json =JSON.parse(result);
+    
   } catch (error) {
     console.error("Error generating quiz:", error);
     res.status(500).json({ error: "Failed to generate quiz" });

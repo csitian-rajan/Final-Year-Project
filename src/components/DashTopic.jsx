@@ -5,6 +5,7 @@ import { GiProgression } from "react-icons/gi";
 import { PiPersonSimpleRunBold } from "react-icons/pi";
 
 export const DashTopic=({onTopicSelect})=>{
+    console.log("my selected topic is",onTopicSelect.id);
 
       const iconMap = {
       FaBookOpen: <FaBookOpen className="icon-style" />,

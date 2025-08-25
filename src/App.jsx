@@ -37,7 +37,7 @@ const router = createBrowserRouter([
     element:<Contact />
   },
   {
-   path:"/quiz",
+   path:"/generated-quiz",
    element:<GeneratedQuiz />
   },
     {
