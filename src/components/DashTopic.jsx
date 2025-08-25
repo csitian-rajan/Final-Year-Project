@@ -21,6 +21,7 @@ export const DashTopic=({onTopicSelect})=>{
                <p>{iconMap[icon]}</p>
            <h1 className="section-sub--heading">{name}</h1>
            <p>{information}</p>
+          <button className="btn">Generate Quiz</button>
          </div>
       
         })

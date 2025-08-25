@@ -8,6 +8,7 @@ import { Country } from "./pages/Country";
 import { Home } from "./pages/Home";
 import { ErrorPage } from "./pages/ErrorPage";
 import { DashBord } from "./pages/DashBord";
+import { GeneratedQuiz } from "./pages/GeneratedQuiz";
 
 
 
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
     {
     path:"/contact",
     element:<Contact />
+  },
+  {
+   path:"/quiz",
+   element:<GeneratedQuiz />
   },
     {
     path:"/country",

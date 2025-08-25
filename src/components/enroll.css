@@ -141,7 +141,7 @@ p{
 /* select subject */
 .select-subject{
 
-  margin-top: 15px;
+  margin-top: 35px;
   margin-left: -120px;
  
 & .subject-button{
@@ -162,3 +162,51 @@ p{
  
 }
 /* select end subject */
+/* pop up select subject */
+.popup-overlay-subject {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 310px;
+  left: 64%;
+}
+
+/* Popup box */
+
+.popup-content-subject {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+ 
+  width: 300px;
+  height: 300px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.3s ease-in-out;
+  & .generate-quiz{
+     margin-top: 10px;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+  }
+  & h3{
+   margin: 10px;
+   font-weight: bold;
+
+  }
+}
+
+.popup-content button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.popup-content button:hover {
+  background: #1d4ed8;
+} 
+/* pop up end select subject */

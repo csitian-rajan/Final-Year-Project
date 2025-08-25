@@ -5,13 +5,17 @@ import {  SelectSubjectQuiz } from "../components/SelectSubjectQuiz";
 
 export const SelectTopic=({topic,onClose})=>{
 
- const [selectSubject,setSelectSubject]=useState({id:1 , name:"select Subject"});
+ const [selectSubject,setSelectSubject]=useState("");
 
   const handleQuizSelect=(id,quiztopic)=>{
  console.log("id:",id,"selectedQuiz:",quiztopic);
       setSelectSubject({id,quiztopic});
       console.log(setSelectSubject.id,setSelectSubject.quiztopic);
   }
+  
+  //  const onClosePopup=()=>{
+  //   setSelectSubject(null);
+  //  }
 
     if(!topic) return null;
     return(
@@ -33,7 +37,7 @@ export const SelectTopic=({topic,onClose})=>{
                  {selectSubject?.id == 1 && (
                   <>
                      <SelectSubjectQuiz Quizselect={selectSubject} />
-                       <h1>hello iam select topic</h1>
+                      
                        </>
         )}
               {selectSubject?.id==2 &&(
@@ -52,4 +56,4 @@ export const SelectTopic=({topic,onClose})=>{
           </div>
     </>
     );
-}
+  }

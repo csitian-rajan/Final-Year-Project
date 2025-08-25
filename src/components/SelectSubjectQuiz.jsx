@@ -1,42 +1,51 @@
 import { useState } from "react";
 import"./enroll.css";
+import { SelectChapter } from "./SelectChapter";
 
 export const SelectSubjectQuiz = ({Quizselect }) => {
   // subject list
   const subjects = ["Math", "Physics", "Chemistry", "English"];
   const tag="IOE";
 
-  // syllabus data
-  const syllabus = {
-    Math: ["Algebra", "Geometry", "Calculus"],
-    Physics: ["Mechanics", "Optics", "Electromagnetism"],
-    Chemistry: ["Organic", "Inorganic", "Physical"],
-    English: ["Grammar", "Comprehension", "Literature"],
+
+  const [selectedSubject, setSelectedSubject] = useState("");
+ 
+   const handlebtn=(subj,i)=>{
+    console.log("subject:",subj);
+   
+    setSelectedSubject(subj);
+    console.log(selectedSubject);
+  
+   }
+   const closePopup = () => {
+    setSelectedSubject(null);
   };
 
-  const [selectedSubject, setSelectedSubject] = useState(null);
+if (!Quizselect || !Quizselect.id == 1) return null;
+
+   return (
+     <>
  
-   const handlebtn=()=>{
-    
-   }
-
-if(!Quizselect.id== 1) return null; // Safe check
-
-    // if (!Quizselect || Quizselect.id !==1) return null; // Only show when id=1
-
-  return (
-    <>
-    <h1>Select Subject</h1>
     <div className="select-subject">
        {
-        subjects.map((subj)=> {
+        subjects.map((subj,i)=> {
             return <>
-            <button key={subj}  name={subj} className=" subject-button flex  w-150 h-20 " onClick={handlebtn}>{subj}<span>{tag}</span></button>
+            <button key={subj}  className=" subject-button flex  w-150 h-20 " onClick={()=>handlebtn(subj)}>{subj}<span>{tag}</span></button>
             </>
         })
        }
     </div>
-    </>
+            {/* ✅ show SelectChapter only if a subject is clicked */}
+
+            <div className="slelect-chapter">
+
+               {selectedSubject && 
+            <SelectChapter subject={selectedSubject} onClose={closePopup} />
+      }
+    
+      </div>
+       
+     </>
   );
 };
 

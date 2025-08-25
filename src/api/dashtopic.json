@@ -2,7 +2,7 @@
     {
        "id":1,
        "name":"IOE",
-       "information":"Prepared for IOE exam PCM  MCQ with AI.",
+       "information":"Prepared for IOE exam PCM with AI.",
        "icon":"FaBookOpen",
        "color":"blue"
        
@@ -11,7 +11,7 @@
        
        "id":2,
        "name":"LOk Sewa",
-       "information":"Prepared for LOk Sewa exam  MCQ with AI.", 
+       "information":"Prepared for LOk Sewa exam   with AI.", 
        "icon":"GiProgression",
        "color":"violete"
     },
