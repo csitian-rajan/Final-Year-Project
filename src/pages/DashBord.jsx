@@ -22,20 +22,41 @@ export const DashBord = () => {
 
   return (
     <main>
+      <div className="dashbord-review">
       <div className="container">
+        <div className="heading"></div>
         <h1 className="dashbord-heading">Welcome back, {name}!</h1>
         <p className="section-common-subheading">
           Ready to continue your learning journey?
         </p>
         <DashCard />
+        </div>
+        </div>
+           <div className="section-topic">
+         <div className="container">
+                <div className="section-about">
+               <h1 className="section-heading">Choose Your Challenge </h1>
+           
+                 <p className="paragraph">Select a topic to start your quiz journey</p>
+                <div className="information">
+                   <DashTopic onTopicSelect={handleTopicSelect}  />
+                </div>
+                 </div>
+            </div>
+            </div>
+      
 
+            
         <div className="section-topic">
+          <div className="container">
+          <h1 className="section-heading">Generate Custom Questions</h1>
           <DashTopic onTopicSelect={handleTopicSelect}  />
         </div>
+       
 
         {/* ✅ Popup modal */}
          <SelectTopic topic={selectedTopic} onClose={closePopup} />
-      </div>
+     </div>
     </main>
   );
 };

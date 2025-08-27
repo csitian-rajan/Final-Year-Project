@@ -15,23 +15,11 @@ export const SelectChapter = ({ subject, examType,onClose }) => {
     },
 
     LokSewa: {
-      "Computer Operator": [
-        "Computer Fundamentals",
-        "Operating System",
-        "MS Word",
-        "MS Excel",
-        "MS PowerPoint",
-        "MS Access / SQL Basics",
-        "Computer Networks",
-        "Internet & Email",
-        "Programming Fundamentals",
-        "IT Policy & Cyber Security",
-        "Office Management & Typing",
-      ],
+      ComputerOperator: ["Computer Fundamentals", "Operating System","MS Word","MS Excel", "MS PowerPoint", "MS Access / SQL Basics", "Computer Networks", "Internet & Email", "Programming Fundamentals","IT Policy & Cyber Security","Office Management & Typing", ],
     },
 
     GeneralKnowledge: {
-      "General Knowledge": [
+      GeneralKnowledge: [
         "Nepal History",
         "World History",
         "Geography of Nepal",
@@ -47,7 +35,7 @@ export const SelectChapter = ({ subject, examType,onClose }) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-  
+   console.log("selectedChapter",selectedChapter);
   
     let chapterList = [];
   if (syllabus[examType]?.[subject]) {
@@ -66,7 +54,7 @@ export const SelectChapter = ({ subject, examType,onClose }) => {
       const res = await fetch("http://localhost:5000/api/generate-quiz", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ subject, chapter: selectedChapter }),
+        body: JSON.stringify({ subject, chapter:selectedChapter }),
       });
 
       const data = await res.json();
@@ -82,7 +70,7 @@ export const SelectChapter = ({ subject, examType,onClose }) => {
       // After fetching data from backend
        
       if(!data.success || !Array.isArray(data.quiz) || data.quiz.length === 0){
-        alert("failed to quiz generate");
+        alert("Failed to generate quiz. Raw output:\n" + (data.raw || "Unknown error"));
     
     return;
       }

@@ -34,6 +34,23 @@ p{
 }
 
 
+/* dashbord welcome section */
+.dashbord-review{
+  .container{
+    height: auto;
+  }
+}
+/* end dashbord welcome section */
+/* dashbord Topic Card */
+.section-topic{
+  & .container{
+height: auto;
+text-align: center;
+& .section-heading{
+   margin-top:-1px;
+}
+  }
+}
 .card-about{
 
     text-align: center;
@@ -42,7 +59,8 @@ p{
     margin: 5rem 2rem;
     padding: 2rem 1.5rem;
     background-color: #ffffff;
-   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+   /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+   border: 1px solid rgb(168, 168, 168);
    border-radius: 10px;
    &:hover{
       scale: 1.1;
@@ -55,8 +73,9 @@ p{
    }
   }
 
+/* end dashbord Topic Card */
 
-  /* end enroll card */
+
 
   /* dashcard */
 
@@ -152,7 +171,11 @@ p{
   display: flex;
   justify-content: space-between;
   align-items: center;
+   & :hover{
+      color: #fff;
+   }
 }
+
 & span{
   color: #000;
   font-weight: 100;
@@ -168,8 +191,8 @@ p{
   display: flex;
   justify-content: center;
   align-items: center;
-  top: 310px;
-  left: 64%;
+  top: 150px;
+  left: 70%;
 }
 
 /* Popup box */
@@ -180,8 +203,8 @@ p{
   border-radius: 12px;
  
   width: 300px;
-  height: 300px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  height: auto;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   animation: fadeIn 0.3s ease-in-out;
   & .generate-quiz{
      margin-top: 10px;
@@ -269,3 +292,4 @@ p{
   }
 }
 /* section end  -generated quizz */
+

@@ -10,6 +10,7 @@ export const GeneratedQuiz = () => {
   const[score,setScore]=useState(0);
   const[currentQuestionIndex,setCurrentQuestionIndex]=useState(0);
   const [answers, setAnswers] = useState({});
+  const[startTime]=useState(Date.now());
 
   console.log("Quiz received:", quiz);
 
@@ -23,12 +24,26 @@ export const GeneratedQuiz = () => {
   }
 
  const handleAnswer=(option)=>{
- if(option===quiz[currentQuestionIndex].answer){
-  setScore(score+1)
- }
- if(currentQuestionIndex< quiz.length-1){
+  
+   // Save user answer
+    const newAnswers = { ...answers, [currentQuestionIndex]: option };
+    setAnswers(newAnswers);
+
+   // Update score if correct
+    if (option === quiz[currentQuestionIndex].answer) {
+      setScore((prev) => prev + 1);
+    }
+   //if no last question,go to next
+    if(currentQuestionIndex< quiz.length-1){
   setCurrentQuestionIndex(currentQuestionIndex+1)
- }
+ } else {
+    // 🚀 Quiz finished, go to result page
+     const endTime = Date.now();
+      const timeTaken = Math.floor((endTime - startTime) / 1000); // seconds
+    navigate("/quiz-result", {
+      state: { score, total: quiz.length, answers:newAnswers,quiz,timeTaken, },
+    });
+  }
 
  }
  const handlePriview=()=>{
@@ -47,7 +62,7 @@ export const GeneratedQuiz = () => {
     <div className="Container section-Generatedquiz">
     <div className="timer-back">
       <button onClick={() => navigate(-1)} className="text-gray-100 flex justify-center items-center rounded-sm dark:bg-gray-700 w-30"><FaArrowCircleLeft/>Back</button>
-      <button class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-sm dark:bg-gray-700 dark:text-blue-400 border border-blue-400 w-50">Timer</button>
+      <button class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-sm dark:bg-gray-700 dark:text-blue-400 border border-blue-400 w-50">Timer running</button>
         
     </div>
        

@@ -2,8 +2,8 @@ import { useState } from "react";
 import "./enroll.css";
 import { SelectChapter } from "./SelectChapter";
 
-export const SelectSubjectQuiz = ({ Quizselect }) => {
-   console.log("the id is subject",Quizselect);
+export const SelectSubjectQuiz = ({ Quizselect,topicselect }) => {
+   console.log("the id is subject",Quizselect,"the topic is:",topicselect);
   if (!Quizselect) return null;
 
 //   Map Quizselect.id to exam type
@@ -14,10 +14,10 @@ export const SelectSubjectQuiz = ({ Quizselect }) => {
   };
  
 
-  const examType = examTypeMap[Quizselect.id];
+  const examType = examTypeMap[Quizselect.id,topicselect.id];
   const subjectsMap = {
     IOE: ["Math", "Physics", "Chemistry", "English"],
-    LokSewa: ["General Paper", "Aptitude", "Current Affairs", "English"],
+    LokSewa: ["ComputerOperator"],
     GK: ["History", "Geography", "Science", "Politics"],
   };
 
@@ -41,11 +41,11 @@ export const SelectSubjectQuiz = ({ Quizselect }) => {
   return (
     <>
       <div className="select-subject">
-        <h1 className="text-black">Select a Subject</h1>
+        <h1 className=""></h1>
          {subjects.map((subj) => (
           <button
             key={subj}
-            className="subject-button flex w-150 h-20"
+            className=" btn subject-button flex w-150 h-20 "
             onClick={() => handlebtn(subj)}
           >
             {subj} <span>{examType}</span>

@@ -1,4 +1,4 @@
-import { FaLongArrowAltRight } from "react-icons/fa";
+import { FaArrowCircleLeft, FaArrowCircleRight, FaLongArrowAltRight } from "react-icons/fa";
 import { Enroll } from "../components/Enroll";
 import { AboutCard } from "../components/AboutCard";
 
@@ -11,7 +11,7 @@ export const Home =()=>{
          <h1 className="section-heading">Master Your Competitive Exams </h1>
          <div className="section-sub-heading">with AI-Powered Quizzes</div>
          <p className="paragraph">Practice with thousands of questions, get AI-generated quizzes,and excel in <span>IOE,Lok sewa </span>and other competitive exams.</p>
-         <button className="btn">Start Your Journey <FaLongArrowAltRight/> </button>
+         <button className="btn">Start Your Journey<FaArrowCircleRight/> </button>
          </div>
          <div className="student">
           

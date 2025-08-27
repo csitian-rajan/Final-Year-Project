@@ -4,13 +4,13 @@ import { useState } from "react";
 import {  SelectSubjectQuiz } from "../components/SelectSubjectQuiz";
 
 export const SelectTopic=({topic,onClose})=>{
-
+console.log("my topic is:",topic);
  const [selectSubject,setSelectSubject]=useState("");
 
   const handleQuizSelect=(id,quiztopic)=>{
- console.log("id:",id,"selectedQuiz:",quiztopic);
+       console.log("the quizz selected is id:",id,"selectedQuiz:",quiztopic);
       setSelectSubject({id,quiztopic});
-      console.log(setSelectSubject.id,setSelectSubject.quiztopic);
+      // console.log(setSelectSubject.id,setSelectSubject.quiztopic);
   }
   
   //  const onClosePopup=()=>{
@@ -36,7 +36,7 @@ export const SelectTopic=({topic,onClose})=>{
               
                  {selectSubject?.id == 1 && (
                   <>
-                     <SelectSubjectQuiz Quizselect={selectSubject} />
+                     <SelectSubjectQuiz Quizselect={selectSubject} topicselect={topic} />
                       
                        </>
         )}
