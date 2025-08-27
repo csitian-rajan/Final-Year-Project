@@ -3,7 +3,7 @@ import "./enroll.css";
 import { SelectChapter } from "./SelectChapter";
 
 export const SelectSubjectQuiz = ({ Quizselect,topicselect }) => {
-   console.log("the id is subject",Quizselect,"the topic is:",topicselect);
+   console.log("the id is subject",Quizselect,"the subject id is:",Quizselect.id,"the topic is:",topicselect);
   if (!Quizselect) return null;
 
 //   Map Quizselect.id to exam type
@@ -59,6 +59,7 @@ export const SelectSubjectQuiz = ({ Quizselect,topicselect }) => {
         <SelectChapter
           subject={selectedSubject}
           examType={selectedExamType}
+          topicSelect={Quizselect.id}
           onClose={closePopup}
         />
       )}

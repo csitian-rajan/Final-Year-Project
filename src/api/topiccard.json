@@ -1,17 +1,17 @@
 [
     {
       "id":"1",
-        "heading":"Select Subject",
+        "heading":"Generate",
          "icon":"IoBookOutline",
          "color":"blue",
-         "paragraph":"choose from curated exam topics"
+         "paragraph":"Generate Quiz Chapter Wise"
 
 
     },
       {"id":2,
-        "heading":"Paste Text",
+        "heading":"Play Quiz",
          "icon":"FaGraduationCap",
          "color":"purple",
-         "paragraph":"Generate From your own content"
+         "paragraph":"Play Quiz Chapter Wise"
 }
 ]

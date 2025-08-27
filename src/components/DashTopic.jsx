@@ -8,9 +8,9 @@ export const DashTopic=({onTopicSelect})=>{
     console.log("my selected topic is",onTopicSelect.id);
 
       const iconMap = {
-      FaBookOpen: <FaBookOpen className="icon-style" />,
-      GiProgression: <GiProgression className="icon-style" />,
-      PiPersonSimpleRunBold: <PiPersonSimpleRunBold className="icon-style" />
+      FaBookOpen: <FaBookOpen className="icon-style-green" />,
+      GiProgression: <GiProgression className="icon-style-blue" />,
+      PiPersonSimpleRunBold: <PiPersonSimpleRunBold className="icon-style-red" />
     }
     return <section className="grid grid-three--cols  card">
       
@@ -19,7 +19,7 @@ export const DashTopic=({onTopicSelect})=>{
         topicChose.map((topic)=>{
             const{id,name,information,icon}=topic;
             return  <div className="card-about dash-topic " key={id} onClick={()=>onTopicSelect(id,name)}>
-               <p>{iconMap[icon]}</p>
+               <p className="icons">{iconMap[icon]}</p>
            <h1 className="section-sub--heading">{name}</h1>
            <p>{information}</p>
           <button className="btn">Generate Quiz</button>

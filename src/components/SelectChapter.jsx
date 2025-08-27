@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-export const SelectChapter = ({ subject, examType,onClose }) => {
- console.log("Subject:", subject, "Exam Type:", examType);
+export const SelectChapter = ({ subject, examType,topicSelect,onClose }) => {
+ console.log("Subject:", subject, "Exam Type:", examType ,"topic Select id:",topicSelect);
   const navigate = useNavigate();
 
    // ✅ Divided syllabus into groups
@@ -66,6 +66,7 @@ export const SelectChapter = ({ subject, examType,onClose }) => {
       }
 
       console.log("Quiz generated backend:", data);
+   
       
       // After fetching data from backend
        
@@ -90,6 +91,21 @@ export const SelectChapter = ({ subject, examType,onClose }) => {
       setLoading(false);
     }
   };
+
+  // handle play Quiz
+  const handlePlay = async () => {
+    if (!selectedChapter) {
+      alert("Please select a chapter first");
+      return;
+    }
+
+    setLoading(true);
+    setError("");
+     navigate("/selected-quiz", {
+        state: { subject, chapter:selectedChapter },})
+  }
+
+  
    // ✅ Find correct chapter list
 
 
@@ -117,11 +133,19 @@ export const SelectChapter = ({ subject, examType,onClose }) => {
             </ul>
 
             {error && <p className="text-red-600">{error}</p>}
-
-            <button disabled={loading} onClick={handleGenerate}>
-              {loading ? "Generating..." : "Generate Quiz"}
+             {/* ✅ Conditional Button based on subject.id */}
+               {topicSelect==1?(
+              <button disabled={loading} onClick={handleGenerate}>
+                {loading ? "Generating..." : "Generate Quiz"}
+              </button>
+                 ) :topicSelect==2?(
+          
+             <button disabled={loading} onClick={handlePlay}>
+              {loading ? "starting..." : "Start Quiz"}
             </button>
+              ):null} 
             <button onClick={onClose}>Close</button>
+            
           </div>
         </div>
       </div>

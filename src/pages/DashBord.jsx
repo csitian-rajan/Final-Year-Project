@@ -2,6 +2,7 @@ import { useState } from "react";
 import { DashTopic } from "../components/DashTopic";
 import { SelectTopic } from "./SelectTopic";
 import { DashCard } from "../components/DashCard";
+import FileUploadSection from "../components/FileUploadSection";
 
 export const DashBord = () => {
   const name = "Rajan";
@@ -44,19 +45,22 @@ export const DashBord = () => {
                  </div>
             </div>
             </div>
-      
-
-            
-        <div className="section-topic">
-          <div className="container">
-          <h1 className="section-heading">Generate Custom Questions</h1>
-          <DashTopic onTopicSelect={handleTopicSelect}  />
-        </div>
-       
-
-        {/* ✅ Popup modal */}
+            {/* ✅ Popup modal */}
          <SelectTopic topic={selectedTopic} onClose={closePopup} />
-     </div>
+
+         <div className="section-topic">
+         <div className="container">
+                <div className="section-about">
+               <h1 className="section-heading">Generate Custom Questions </h1>
+           
+                 <p className="paragraph">Create personalized quiz questions using AI or your documents</p>
+                <div className="information">
+                  <FileUploadSection />
+                </div>
+                 </div>
+            </div>
+            </div>
+    
     </main>
   );
 };

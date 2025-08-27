@@ -104,7 +104,7 @@ export const QuizResult = () => {
       {showReview && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
           <div className="bg-white p-6 rounded-xl shadow-lg w-full max-w-3xl relative">
-            <h3 className="text-gray-700 text-2xl h-15 mb-4">Question Review</h3>
+            <h3 className="text-gray-100 bg-gray-600 text-2xl h-15 mb-4">Question Review</h3>
 
             <div className=" display-review overflow-y-auto max-h-[70vh] p-2 ">
               {quiz.map((q, i) => {
@@ -147,7 +147,7 @@ export const QuizResult = () => {
             </button>
 
             {/* Buttons inside modal */}
-            <div className="flex gap-4 mt-6">
+            <div className="flex gap-4 mt-6 bg-gray-600 h-15">
               <button
                 onClick={() => navigate("/")}
                 className="flex items-center gap-2 px-5 py-2 bg-gray-200 hover:bg-gray-300 text-gray-700 font-medium rounded-xl shadow"

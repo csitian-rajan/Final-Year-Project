@@ -29,6 +29,7 @@ export const Home =()=>{
   {/* end main section  */}
 
     {/* // about section */}
+    <div className="section-topic">
     <div className="container">
         <div className="section-about">
        <h1 className="section-heading">Why Choose QuizMaster? </h1>
@@ -39,5 +40,7 @@ export const Home =()=>{
         </div>
          </div>
     </div>
+    </div>
+    
     </>
 }

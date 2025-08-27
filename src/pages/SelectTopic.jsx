@@ -24,7 +24,7 @@ console.log("my topic is:",topic);
           <div className="popup-overlay">
             <div className="popup-content">
                <div className="generate-quiz">
-              <h2 className=" font-bold  text-5xl text-blue-600 ">Generate Quiz</h2>
+              <h2 className=" font-bold  text-5xl text-blue-600 ">Play Quiz</h2>
               <h3 className="text-3xl text-black ">Choose Quiz</h3>
                <div className="Select-Topic">
                 <TopicCard  onQuizSelect={handleQuizSelect}/>
@@ -41,7 +41,10 @@ console.log("my topic is:",topic);
                        </>
         )}
               {selectSubject?.id==2 &&(
-                <h1>hello iam a copy pester</h1>
+                <>
+                {/* <h1>hello iam  From Selected Quiz</h1> */}
+                 <SelectSubjectQuiz Quizselect={selectSubject} topicselect={topic} />
+                </>
               )}
               {/* <p>
                 <strong>ID:</strong> {topic.id}
